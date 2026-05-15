@@ -7,6 +7,122 @@
 
 #include "util/driconf.h"
 
+<<<<<<< HEAD
+=======
+#include "util/log.h"
+
+static const driOptionDescription anv_dri_options[] = {
+   DRI_CONF_SECTION_PERFORMANCE
+      DRI_CONF_ADAPTIVE_SYNC(true)
+      DRI_CONF_VK_X11_OVERRIDE_MIN_IMAGE_COUNT(0)
+      DRI_CONF_VK_X11_STRICT_IMAGE_COUNT(false)
+      DRI_CONF_VK_WSI_DISABLE_UNORDERED_SUBMITS(false)
+      DRI_CONF_VK_XWAYLAND_WAIT_READY(false)
+      DRI_CONF_ANV_ASSUME_FULL_SUBGROUPS(0)
+      DRI_CONF_ANV_ASSUME_FULL_SUBGROUPS_WITH_BARRIER(false)
+      DRI_CONF_ANV_ASSUME_FULL_SUBGROUPS_WITH_SHARED_MEMORY(false)
+      DRI_CONF_ANV_BARRIER_POST_TYPED_CLEAR_SHADER(false)
+      DRI_CONF_ANV_BARRIER_POST_UNTYPED_CLEAR_SHADER(false)
+      DRI_CONF_ANV_DISABLE_FCV(false)
+      DRI_CONF_ANV_ENABLE_BUFFER_COMP(false)
+      DRI_CONF_ANV_DISABLE_DRM_AUX_MODIFIERS(false)
+      DRI_CONF_ANV_EXTERNAL_MEMORY_IMPLICIT_SYNC(true)
+      DRI_CONF_ANV_FORCE_GUC_LOW_LATENCY(false)
+      DRI_CONF_ANV_SAMPLE_MASK_OUT_OPENGL_BEHAVIOUR(false)
+      DRI_CONF_ANV_FORCE_FILTER_ADDR_ROUNDING(false)
+      DRI_CONF_ANV_FP64_WORKAROUND_ENABLED(false)
+      DRI_CONF_ANV_GENERATED_INDIRECT_THRESHOLD(4)
+      DRI_CONF_ANV_GENERATED_INDIRECT_RING_THRESHOLD(100)
+      DRI_CONF_ANV_PROMOTE_CBV_TO_PUSH_BUFFERS(false)
+      DRI_CONF_ANV_STATE_CACHE_PERF_FIX(false)
+      DRI_CONF_NO_16BIT(false)
+      DRI_CONF_INTEL_BINDING_TABLE_BLOCK_SIZE(BINDING_TABLE_POOL_DEFAULT_BLOCK_SIZE,
+                                              1024, 128 * 1024)
+      DRI_CONF_INTEL_DISABLE_PUSH_CONSTANT_ALLOC(true)
+      DRI_CONF_INTEL_ENABLE_WA_14018912822(false)
+      DRI_CONF_INTEL_ENABLE_WA_14024015672_MSAA(false)
+      DRI_CONF_INTEL_SAMPLER_ROUTE_TO_LSC(false)
+      DRI_CONF_ANV_QUERY_CLEAR_WITH_BLORP_THRESHOLD(6)
+      DRI_CONF_ANV_QUERY_COPY_WITH_SHADER_THRESHOLD(6)
+      DRI_CONF_ANV_FORCE_INDIRECT_DESCRIPTORS(false)
+      DRI_CONF_ANV_DISABLE_LINK_TIME_OPTIMIZATION(false)
+      DRI_CONF_ANV_ENABLE_OPT_DIVERGENT_ATOMICS(0)
+      DRI_CONF_ANV_BRW_DISABLE_SUBGROUP_SIZE_CONTROL(false)
+      DRI_CONF_SHADER_SPILLING_RATE(11)
+      DRI_CONFIG_INTEL_FORCE_COMPUTE_SURFACE_PREFETCH(true)
+      DRI_CONFIG_INTEL_FORCE_SAMPLER_PREFETCH(false)
+      DRI_CONFIG_INTEL_TBIMR(true)
+      DRI_CONFIG_INTEL_VF_DISTRIBUTION(true)
+      DRI_CONFIG_INTEL_TE_DISTRIBUTION(true)
+      DRI_CONFIG_INTEL_STORAGE_CACHE_POLICY_WT(false)
+      DRI_CONF_ANV_LARGE_WORKGROUP_NON_COHERENT_IMAGE_WORKAROUND(false)
+#if DETECT_OS_ANDROID && ANDROID_API_LEVEL >= 37
+      DRI_CONF_ANV_COMPRESSION_CONTROL_ENABLED(true)
+#else
+      DRI_CONF_ANV_COMPRESSION_CONTROL_ENABLED(false)
+#endif
+      DRI_CONF_ANV_FAKE_NONLOCAL_MEMORY(false)
+      DRI_CONF_OPT_E(intel_stack_id, 512, 256, 2048,
+                     "Control the number stackIDs (i.e. number of unique rays in the RT subsytem)",
+                     DRI_CONF_ENUM(256,  "256 stackids")
+                     DRI_CONF_ENUM(512,  "512 stackids")
+                     DRI_CONF_ENUM(1024, "1024 stackids")
+                     DRI_CONF_ENUM(2048, "2048 stackids"))
+      DRI_CONF_OPT_E(dispatch_timeout_counter, 512, 64, 4096,
+                     "Force BTD child dispatches if dispatches do not happen naturally for number of clocks equal to the programmed timeout counter",
+                     DRI_CONF_ENUM(64,    "64 clocks")
+                     DRI_CONF_ENUM(128,   "128 clocks")
+                     DRI_CONF_ENUM(192,   "192 clocks")
+                     DRI_CONF_ENUM(256,   "256 clocks")
+                     DRI_CONF_ENUM(384,   "384 clocks")
+                     DRI_CONF_ENUM(512,   "512 clocks")
+                     DRI_CONF_ENUM(640,   "640 clocks")
+                     DRI_CONF_ENUM(768,   "768 clocks")
+                     DRI_CONF_ENUM(896,   "896 clocks")
+                     DRI_CONF_ENUM(1024,  "1024 clocks")
+                     DRI_CONF_ENUM(1152,  "1152 clocks")
+                     DRI_CONF_ENUM(1280,  "1280 clocks")
+                     DRI_CONF_ENUM(1408,  "1408 clocks")
+                     DRI_CONF_ENUM(1536,  "1536 clocks")
+                     DRI_CONF_ENUM(1664,  "1664 clocks")
+                     DRI_CONF_ENUM(1792,  "1792 clocks")
+                     DRI_CONF_ENUM(1920,  "1920 clocks")
+                     DRI_CONF_ENUM(2048,  "2048 clocks")
+                     DRI_CONF_ENUM(4096,  "4096 clocks"))
+      DRI_CONF_ANV_UPPER_BOUND_DESCRIPTOR_POOL_SAMPLER(false)
+      DRI_CONF_ANV_ENABLE_FULLY_COVERED(false)
+   DRI_CONF_SECTION_END
+
+   DRI_CONF_SECTION_DEBUG
+      DRI_CONF_ALWAYS_FLUSH_CACHE(false)
+      DRI_CONF_VK_LOWER_TERMINATE_TO_DISCARD(false)
+      DRI_CONF_VK_WSI_FORCE_BGRA8_UNORM_FIRST(false)
+      DRI_CONF_VK_WSI_FORCE_SWAPCHAIN_TO_CURRENT_EXTENT(false)
+      DRI_CONF_VK_X11_IGNORE_SUBOPTIMAL(false)
+      DRI_CONF_LIMIT_TRIG_INPUT_RANGE(false)
+#if DETECT_OS_ANDROID && ANDROID_API_LEVEL >= 35
+      DRI_CONF_ANV_EMULATE_READ_WITHOUT_FORMAT(true)
+#else
+      DRI_CONF_ANV_EMULATE_READ_WITHOUT_FORMAT(false)
+#endif
+      DRI_CONF_FORCE_VK_VENDOR()
+      DRI_CONF_FAKE_SPARSE(false)
+      DRI_CONF_CUSTOM_BORDER_COLORS_WITHOUT_FORMAT(!DETECT_OS_ANDROID)
+#if DETECT_OS_ANDROID && ANDROID_API_LEVEL >= 34
+      DRI_CONF_VK_REQUIRE_ASTC(true)
+#else
+      DRI_CONF_VK_REQUIRE_ASTC(false)
+#endif
+      DRI_CONF_ANV_VF_COMPONENT_PACKING(true)
+      DRI_CONF_ANV_ENABLE_SCRATCH_PAGE(false)
+   DRI_CONF_SECTION_END
+
+   DRI_CONF_SECTION_QUALITY
+      DRI_CONF_PP_LOWER_DEPTH_RANGE_RATE()
+   DRI_CONF_SECTION_END
+};
+
+>>>>>>> 08e33f75fde (added logging)
 static const struct debug_control debug_control[] = {
    { "bindless",                  ANV_DEBUG_BINDLESS},
    { "desc-dirty",                ANV_DEBUG_DESCRIPTOR_DIRTY},
@@ -164,6 +280,8 @@ VkResult anv_CreateInstance(
     const VkAllocationCallbacks*                pAllocator,
     VkInstance*                                 pInstance)
 {
+   mesa_log_func(MESA_LOG_INFO, "ANV.init", "-");
+
    struct anv_instance *instance;
    VkResult result;
 

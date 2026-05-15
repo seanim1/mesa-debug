@@ -39,6 +39,8 @@
 #include "clcd97.h"
 #include "drf.h"
 
+#include "util/log.h"
+
 static inline uint16_t
 nvk_cmd_buffer_3d_cls(struct nvk_cmd_buffer *cmd)
 {
@@ -4845,6 +4847,7 @@ nvk_CmdDraw(VkCommandBuffer commandBuffer,
             uint32_t firstVertex,
             uint32_t firstInstance)
 {
+   mesa_log_func(MESA_LOG_INFO, "NVK.init", "-");
    VK_FROM_HANDLE(nvk_cmd_buffer, cmd, commandBuffer);
 
    if (unlikely(!vertexCount || !instanceCount))

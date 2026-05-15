@@ -529,6 +529,7 @@ vk_meta_create_image_view(struct vk_command_buffer *cmd,
                           const VkImageViewCreateInfo *info,
                           VkImageView *image_view_out)
 {
+   mesa_log_func(MESA_LOG_INFO, "VkRuntime.init", "-");
    struct vk_device *device = cmd->base.device;
    const struct vk_device_dispatch_table *disp = &device->dispatch_table;
    VkDevice _device = vk_device_to_handle(device);

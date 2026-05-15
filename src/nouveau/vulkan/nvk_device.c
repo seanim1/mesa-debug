@@ -230,6 +230,7 @@ nvk_CreateDevice(VkPhysicalDevice physicalDevice,
                  const VkAllocationCallbacks *pAllocator,
                  VkDevice *pDevice)
 {
+   mesa_log_func(MESA_LOG_INFO, "NVK.init", "-");
    VK_FROM_HANDLE(nvk_physical_device, pdev, physicalDevice);
    VkResult result = VK_ERROR_OUT_OF_HOST_MEMORY;
    struct nvk_device *dev;

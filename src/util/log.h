@@ -37,6 +37,10 @@ extern "C" {
 #define MESA_LOG_TAG "MESA"
 #endif
 
+#define mesa_log_func(level, tag, fmt, ...) \
+    mesa_log(level, tag, "func=%s | file=%s:%d | " fmt, \
+             __FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
+
 enum mesa_log_level {
    MESA_LOG_ERROR,
    MESA_LOG_WARN,

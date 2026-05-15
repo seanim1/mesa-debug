@@ -48,6 +48,8 @@
 #include <unistd.h>
 #endif
 
+#include "util/log.h"
+
 uint64_t WSI_DEBUG;
 
 static const struct debug_control debug_control[] = {
@@ -2166,6 +2168,7 @@ wsi_AcquireNextImage2KHR(VkDevice _device,
                          const VkAcquireNextImageInfoKHR *pAcquireInfo,
                          uint32_t *pImageIndex)
 {
+   fprintf(stderr, "[ANV DEBUG] UserP: hello: wsi_AcquireNextImage2KHR\n");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(vk_device, device, _device);
 
@@ -2767,6 +2770,7 @@ wsi_common_queue_present(const struct wsi_device *wsi,
 VKAPI_ATTR VkResult VKAPI_CALL
 wsi_QueuePresentKHR(VkQueue _queue, const VkPresentInfoKHR *pPresentInfo)
 {
+   mesa_log_func(MESA_LOG_INFO, "WSI.iter", "-");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(vk_queue, queue, _queue);
 
