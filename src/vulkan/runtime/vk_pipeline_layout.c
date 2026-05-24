@@ -112,6 +112,7 @@ vk_common_CreatePipelineLayout(VkDevice _device,
                                UNUSED const VkAllocationCallbacks *pAllocator,
                                VkPipelineLayout *pPipelineLayout)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
 
    struct vk_pipeline_layout *layout =
@@ -144,6 +145,7 @@ vk_common_DestroyPipelineLayout(VkDevice _device,
                                 VkPipelineLayout pipelineLayout,
                                 UNUSED const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_pipeline_layout, layout, pipelineLayout);
 

@@ -709,6 +709,7 @@ VkResult anv_CreateDevice(
     const VkAllocationCallbacks*                pAllocator,
     VkDevice*                                   pDevice)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    anv_wait_for_attach();
    ANV_FROM_HANDLE(anv_physical_device, physical_device, physicalDevice);
    VkResult result;
@@ -1349,6 +1350,7 @@ void anv_DestroyDevice(
     VkDevice                                    _device,
     const VkAllocationCallbacks*                pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    ANV_FROM_HANDLE(anv_device, device, _device);
 
    if (!device)

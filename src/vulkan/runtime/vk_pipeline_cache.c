@@ -712,6 +712,7 @@ vk_common_DestroyPipelineCache(VkDevice device,
                                VkPipelineCache pipelineCache,
                                const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VK_FROM_HANDLE(vk_pipeline_cache, cache, pipelineCache);
 
    if (cache == NULL)

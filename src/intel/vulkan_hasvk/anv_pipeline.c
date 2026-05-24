@@ -1849,6 +1849,7 @@ VkResult anv_CreateGraphicsPipelines(
     const VkAllocationCallbacks*                pAllocator,
     VkPipeline*                                 pPipelines)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    ANV_FROM_HANDLE(anv_device, device, _device);
    ANV_FROM_HANDLE(vk_pipeline_cache, pipeline_cache, pipelineCache);
 

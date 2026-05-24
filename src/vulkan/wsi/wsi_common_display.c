@@ -1159,6 +1159,7 @@ wsi_CreateDisplayModeKHR(VkPhysicalDevice physicalDevice,
                          const VkAllocationCallbacks *pAllocator,
                          VkDisplayModeKHR *pMode)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    struct wsi_display_connector *connector =
       wsi_display_connector_from_handle(display);
 
@@ -1190,6 +1191,7 @@ wsi_GetDisplayPlaneCapabilitiesKHR(VkPhysicalDevice physicalDevice,
                                    uint32_t planeIndex,
                                    VkDisplayPlaneCapabilitiesKHR *pCapabilities)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    struct wsi_display_mode *mode = wsi_display_mode_from_handle(_mode);
 
    /* XXX use actual values */
@@ -1218,6 +1220,7 @@ wsi_GetDisplayPlaneCapabilities2KHR(VkPhysicalDevice physicalDevice,
                                     const VkDisplayPlaneInfo2KHR *pDisplayPlaneInfo,
                                     VkDisplayPlaneCapabilities2KHR *pCapabilities)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_physical_device, pdevice, physicalDevice);
    struct wsi_device *wsi_device = pdevice->wsi_device;
 
@@ -1254,6 +1257,7 @@ wsi_CreateDisplayPlaneSurfaceKHR(VkInstance _instance,
                                  const VkAllocationCallbacks *pAllocator,
                                  VkSurfaceKHR *pSurface)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_instance, instance, _instance);
    VkIcdSurfaceDisplay *surface;
 
@@ -2475,6 +2479,7 @@ static VkResult
 wsi_display_setup_connector(wsi_display_connector *connector,
                             wsi_display_mode *display_mode)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    struct wsi_display *wsi = connector->wsi;
 
    if (connector->current_mode == display_mode && connector->crtc_id)
@@ -2541,6 +2546,7 @@ bail:
 static VkResult
 wsi_display_fence_wait(struct wsi_display_fence *fence, uint64_t timeout)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    wsi_display_debug("%9lu wait fence %lu %ld\n",
                      pthread_self(), fence->sequence,
                      (int64_t) (timeout - os_time_get_nano()));

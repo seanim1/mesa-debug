@@ -2524,6 +2524,7 @@ void
 anv_DestroyImageView(VkDevice _device, VkImageView _iview,
                      const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "HASVK", "-");
    ANV_FROM_HANDLE(anv_device, device, _device);
    ANV_FROM_HANDLE(anv_image_view, iview, _iview);
 

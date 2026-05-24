@@ -422,6 +422,7 @@ vk_common_DestroyPipeline(VkDevice _device,
                           VkPipeline _pipeline,
                           const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_pipeline, pipeline, _pipeline);
 
@@ -482,6 +483,7 @@ vk_common_CmdBindPipeline(VkCommandBuffer commandBuffer,
                           VkPipelineBindPoint pipelineBindPoint,
                           VkPipeline _pipeline)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_command_buffer, cmd_buffer, commandBuffer);
    VK_FROM_HANDLE(vk_pipeline, pipeline, _pipeline);
 
@@ -2237,6 +2239,7 @@ vk_common_CreateGraphicsPipelines(VkDevice _device,
                                   const VkAllocationCallbacks *pAllocator,
                                   VkPipeline *pPipelines)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_pipeline_cache, cache, pipelineCache);
    VkResult first_error_or_success = VK_SUCCESS;
@@ -4456,6 +4459,7 @@ vk_common_DestroyPipelineBinaryKHR(
     VkPipelineBinaryKHR                         pipelineBinary,
     const VkAllocationCallbacks*                pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_pipeline_binary, binary, pipelineBinary);
 

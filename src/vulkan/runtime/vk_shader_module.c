@@ -57,6 +57,7 @@ vk_common_CreateShaderModule(VkDevice _device,
                              const VkAllocationCallbacks *pAllocator,
                              VkShaderModule *pShaderModule)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
     VK_FROM_HANDLE(vk_device, device, _device);
     struct vk_shader_module *module;
 

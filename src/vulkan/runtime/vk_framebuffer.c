@@ -32,6 +32,7 @@ vk_common_CreateFramebuffer(VkDevice _device,
                             const VkAllocationCallbacks *pAllocator,
                             VkFramebuffer *pFramebuffer)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    struct vk_framebuffer *framebuffer;
 
@@ -73,6 +74,7 @@ vk_common_DestroyFramebuffer(VkDevice _device,
                              VkFramebuffer _framebuffer,
                              const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_framebuffer, framebuffer, _framebuffer);
 

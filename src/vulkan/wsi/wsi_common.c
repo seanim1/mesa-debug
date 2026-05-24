@@ -48,8 +48,6 @@
 #include <unistd.h>
 #endif
 
-#include "util/log.h"
-
 uint64_t WSI_DEBUG;
 
 static const struct debug_control debug_control[] = {
@@ -363,6 +361,7 @@ wsi_DestroySurfaceKHR(VkInstance _instance,
                       VkSurfaceKHR _surface,
                       const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_instance, instance, _instance);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, _surface);
 
@@ -1056,6 +1055,7 @@ wsi_GetPhysicalDeviceSurfaceCapabilitiesKHR(
    VkSurfaceKHR _surface,
    VkSurfaceCapabilitiesKHR *pSurfaceCapabilities)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_physical_device, device, physicalDevice);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, _surface);
    struct wsi_device *wsi_device = device->wsi_device;
@@ -1110,6 +1110,7 @@ wsi_GetPhysicalDeviceSurfaceCapabilities2KHR(
    const VkPhysicalDeviceSurfaceInfo2KHR *pSurfaceInfo,
    VkSurfaceCapabilities2KHR *pSurfaceCapabilities)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_physical_device, device, physicalDevice);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, pSurfaceInfo->surface);
    struct wsi_device *wsi_device = device->wsi_device;
@@ -1143,6 +1144,7 @@ wsi_GetPhysicalDeviceSurfaceCapabilities2EXT(
    VkSurfaceKHR _surface,
    VkSurfaceCapabilities2EXT *pSurfaceCapabilities)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_physical_device, device, physicalDevice);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, _surface);
    struct wsi_device *wsi_device = device->wsi_device;
@@ -1190,6 +1192,7 @@ wsi_GetPhysicalDeviceSurfaceFormatsKHR(VkPhysicalDevice physicalDevice,
                                        uint32_t *pSurfaceFormatCount,
                                        VkSurfaceFormatKHR *pSurfaceFormats)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_physical_device, device, physicalDevice);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, _surface);
    struct wsi_device *wsi_device = device->wsi_device;
@@ -1205,6 +1208,7 @@ wsi_GetPhysicalDeviceSurfaceFormats2KHR(VkPhysicalDevice physicalDevice,
                                         uint32_t *pSurfaceFormatCount,
                                         VkSurfaceFormat2KHR *pSurfaceFormats)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_physical_device, device, physicalDevice);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, pSurfaceInfo->surface);
    struct wsi_device *wsi_device = device->wsi_device;
@@ -1220,6 +1224,7 @@ wsi_GetPhysicalDeviceSurfacePresentModesKHR(VkPhysicalDevice physicalDevice,
                                             uint32_t *pPresentModeCount,
                                             VkPresentModeKHR *pPresentModes)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_physical_device, device, physicalDevice);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, _surface);
    struct wsi_device *wsi_device = device->wsi_device;
@@ -1346,6 +1351,7 @@ wsi_CreateSwapchainKHR(VkDevice _device,
                        const VkAllocationCallbacks *pAllocator,
                        VkSwapchainKHR *pSwapchain)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(vk_device, device, _device);
    ICD_FROM_HANDLE(VkIcdSurfaceBase, surface, pCreateInfo->surface);
@@ -1484,6 +1490,7 @@ wsi_DestroySwapchainKHR(VkDevice _device,
                         VkSwapchainKHR _swapchain,
                         const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(wsi_swapchain, swapchain, _swapchain);
@@ -2026,6 +2033,7 @@ wsi_GetSwapchainImagesKHR(VkDevice device,
                           uint32_t *pSwapchainImageCount,
                           VkImage *pSwapchainImages)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(wsi_swapchain, swapchain, _swapchain);
    VK_OUTARRAY_MAKE_TYPED(VkImage, images, pSwapchainImages, pSwapchainImageCount);
@@ -2047,6 +2055,7 @@ wsi_AcquireNextImageKHR(VkDevice _device,
                         VkFence fence,
                         uint32_t *pImageIndex)
 {
+   uxzlog(MESA_LOG_INFO, "WSI.iter", "-");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(vk_device, device, _device);
 
@@ -2168,7 +2177,7 @@ wsi_AcquireNextImage2KHR(VkDevice _device,
                          const VkAcquireNextImageInfoKHR *pAcquireInfo,
                          uint32_t *pImageIndex)
 {
-   fprintf(stderr, "[ANV DEBUG] UserP: hello: wsi_AcquireNextImage2KHR\n");
+   uxzlog(MESA_LOG_INFO, "WSI.iter", "-");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(vk_device, device, _device);
 
@@ -2770,7 +2779,7 @@ wsi_common_queue_present(const struct wsi_device *wsi,
 VKAPI_ATTR VkResult VKAPI_CALL
 wsi_QueuePresentKHR(VkQueue _queue, const VkPresentInfoKHR *pPresentInfo)
 {
-   mesa_log_func(MESA_LOG_INFO, "WSI.iter", "-");
+   uxzlog(MESA_LOG_INFO, "WSI.iter", "-");
    MESA_TRACE_FUNC();
    VK_FROM_HANDLE(vk_queue, queue, _queue);
 

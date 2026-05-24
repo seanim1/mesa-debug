@@ -403,6 +403,7 @@ vk_common_QueueSubmit(
     const VkSubmitInfo*                         pSubmits,
     VkFence                                     fence)
 {
+   uxzlog(MESA_LOG_INFO, "VKR.iter", "-");
    VK_FROM_HANDLE(vk_queue, queue, _queue);
    struct vk_device *device = queue->base.device;
 

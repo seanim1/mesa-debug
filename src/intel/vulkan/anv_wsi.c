@@ -43,6 +43,7 @@ anv_wsi_proc_addr(VkPhysicalDevice physicalDevice, const char *pName)
 VkResult
 anv_init_wsi(struct anv_physical_device *physical_device)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VkResult result;
 
    result = wsi_device_init(&physical_device->wsi_device,
@@ -87,7 +88,7 @@ VkResult anv_AcquireNextImage2KHR(
    const VkAcquireNextImageInfoKHR *pAcquireInfo,
    uint32_t *pImageIndex)
 {
-   mesa_log_func(MESA_LOG_INFO, "ANV.iter", "-");
+   uxzlog(MESA_LOG_INFO, "ANV.iter", "-");
 
    VK_FROM_HANDLE(anv_device, device, _device);
 
@@ -104,7 +105,7 @@ VkResult anv_QueuePresentKHR(
     VkQueue                                  _queue,
     const VkPresentInfoKHR*                  pPresentInfo)
 {
-   mesa_log_func(MESA_LOG_INFO, "ANV", "-");
+   uxzlog(MESA_LOG_INFO, "ANV.iter", "-");
    ANV_FROM_HANDLE(anv_queue, queue, _queue);
    struct anv_device *device = queue->device;
    VkResult result;

@@ -1255,7 +1255,7 @@ void genX(CmdDraw)(
     uint32_t                                    firstVertex,
     uint32_t                                    firstInstance)
 {
-   mesa_log_func(MESA_LOG_INFO, "ANV.init", "-");
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    ANV_FROM_HANDLE(anv_cmd_buffer, cmd_buffer, commandBuffer);
    const struct anv_cmd_graphics_state *gfx = &cmd_buffer->state.gfx;
 

@@ -477,6 +477,7 @@ vk_common_GetDeviceQueue(VkDevice _device,
                          uint32_t queueIndex,
                          VkQueue *pQueue)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
 
    const VkDeviceQueueInfo2 info = {
@@ -502,6 +503,7 @@ vk_common_GetDeviceQueue2(VkDevice _device,
                           const VkDeviceQueueInfo2 *pQueueInfo,
                           VkQueue *pQueue)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
 
    /* From the Vulkan 1.1.70 spec:
@@ -655,6 +657,7 @@ vk_common_GetImageSparseMemoryRequirements(VkDevice _device,
 VKAPI_ATTR VkResult VKAPI_CALL
 vk_common_DeviceWaitIdle(VkDevice _device)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    MESA_TRACE_FUNC();
 
    VK_FROM_HANDLE(vk_device, device, _device);

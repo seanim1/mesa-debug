@@ -128,6 +128,7 @@ wsi_CreateWin32SurfaceKHR(VkInstance _instance,
                           const VkAllocationCallbacks *pAllocator,
                           VkSurfaceKHR *pSurface)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_instance, instance, _instance);
    wsi_win32_surface *surface;
 

@@ -151,6 +151,7 @@ vk_common_CreateFence(VkDevice _device,
                       const VkAllocationCallbacks *pAllocator,
                       VkFence *pFence)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    struct vk_fence *fence = NULL;
 
@@ -190,6 +191,7 @@ vk_common_DestroyFence(VkDevice _device,
                        VkFence _fence,
                        const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_fence, fence, _fence);
 
@@ -204,6 +206,7 @@ vk_common_ResetFences(VkDevice _device,
                       uint32_t fenceCount,
                       const VkFence *pFences)
 {
+   uxzlog(MESA_LOG_INFO, "VKR.iter", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
 
    for (uint32_t i = 0; i < fenceCount; i++) {
@@ -253,6 +256,7 @@ vk_common_WaitForFences(VkDevice _device,
                         VkBool32 waitAll,
                         uint64_t timeout)
 {
+   uxzlog(MESA_LOG_INFO, "VKR.iter", "-");
    MESA_TRACE_FUNC();
 
    VK_FROM_HANDLE(vk_device, device, _device);

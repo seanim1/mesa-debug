@@ -102,6 +102,7 @@ vk_common_CreateCommandPool(VkDevice _device,
                             const VkAllocationCallbacks *pAllocator,
                             VkCommandPool *pCommandPool)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    struct vk_command_pool *pool;
    VkResult result;
@@ -127,6 +128,7 @@ vk_common_DestroyCommandPool(VkDevice _device,
                              VkCommandPool commandPool,
                              const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_command_pool, pool, commandPool);
 
@@ -205,6 +207,7 @@ vk_common_AllocateCommandBuffers(VkDevice device,
                                  const VkCommandBufferAllocateInfo *pAllocateInfo,
                                  VkCommandBuffer *pCommandBuffers)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_command_pool, pool, pAllocateInfo->commandPool);
    VkResult result;
    uint32_t i;

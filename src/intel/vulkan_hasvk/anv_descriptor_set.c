@@ -757,6 +757,7 @@ VkResult anv_CreatePipelineLayout(
     const VkAllocationCallbacks*                pAllocator,
     VkPipelineLayout*                           pPipelineLayout)
 {
+   uxzlog(MESA_LOG_INFO, "ANV_HASVK", "-");
    ANV_FROM_HANDLE(anv_device, device, _device);
    struct anv_pipeline_layout *layout;
 
@@ -802,6 +803,7 @@ void anv_DestroyPipelineLayout(
     VkPipelineLayout                            _pipelineLayout,
     const VkAllocationCallbacks*                pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "ANV_HASVK", "-");
    ANV_FROM_HANDLE(anv_device, device, _device);
    ANV_FROM_HANDLE(anv_pipeline_layout, pipeline_layout, _pipelineLayout);
 

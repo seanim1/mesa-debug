@@ -33,6 +33,7 @@
 #include <string.h>
 
 #include "vk_struct_type_cast.h"
+#include "util/log.h"
 
 #ifdef __cplusplus
 extern "C" {

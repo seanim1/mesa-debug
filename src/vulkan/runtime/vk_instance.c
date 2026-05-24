@@ -484,6 +484,7 @@ VKAPI_ATTR VkResult VKAPI_CALL
 vk_common_EnumeratePhysicalDevices(VkInstance _instance, uint32_t *pPhysicalDeviceCount,
                                    VkPhysicalDevice *pPhysicalDevices)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    VK_FROM_HANDLE(vk_instance, instance, _instance);
    VK_OUTARRAY_MAKE_TYPED(VkPhysicalDevice, out, pPhysicalDevices, pPhysicalDeviceCount);
 

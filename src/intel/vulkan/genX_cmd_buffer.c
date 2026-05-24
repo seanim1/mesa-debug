@@ -3837,6 +3837,7 @@ genX(BeginCommandBuffer)(
     VkCommandBuffer                             commandBuffer,
     const VkCommandBufferBeginInfo*             pBeginInfo)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    ANV_FROM_HANDLE(anv_cmd_buffer, cmd_buffer, commandBuffer);
    VkResult result;
 
@@ -4135,6 +4136,7 @@ static VkResult
 end_command_buffer(struct anv_cmd_buffer *cmd_buffer,
                    bool is_companion)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    if (anv_batch_has_error(&cmd_buffer->batch))
       return cmd_buffer->batch.status;
 
@@ -4219,6 +4221,7 @@ VkResult
 genX(EndCommandBuffer)(
     VkCommandBuffer                             commandBuffer)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    ANV_FROM_HANDLE(anv_cmd_buffer, cmd_buffer, commandBuffer);
 
    VkResult status = end_command_buffer(cmd_buffer, false);
@@ -6278,6 +6281,7 @@ void genX(CmdBeginRendering)(
     VkCommandBuffer                             commandBuffer,
     const VkRenderingInfo*                      pRenderingInfo)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    ANV_FROM_HANDLE(anv_cmd_buffer, cmd_buffer, commandBuffer);
    struct anv_cmd_graphics_state *gfx = &cmd_buffer->state.gfx;
    VkResult result;

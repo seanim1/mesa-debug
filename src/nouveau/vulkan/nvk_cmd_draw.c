@@ -4847,7 +4847,7 @@ nvk_CmdDraw(VkCommandBuffer commandBuffer,
             uint32_t firstVertex,
             uint32_t firstInstance)
 {
-   mesa_log_func(MESA_LOG_INFO, "NVK.init", "-");
+   uxzlog(MESA_LOG_INFO, "NVK", "-");
    VK_FROM_HANDLE(nvk_cmd_buffer, cmd, commandBuffer);
 
    if (unlikely(!vertexCount || !instanceCount))

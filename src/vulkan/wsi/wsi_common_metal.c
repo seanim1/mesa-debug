@@ -769,6 +769,7 @@ wsi_CreateMetalSurfaceEXT(
    const VkAllocationCallbacks* pAllocator,
    VkSurfaceKHR* pSurface)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_instance, instance, _instance);
    VkIcdSurfaceMetal *surface;
 

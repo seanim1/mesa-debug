@@ -7,8 +7,6 @@
 
 #include "util/driconf.h"
 
-<<<<<<< HEAD
-=======
 #include "util/log.h"
 
 static const driOptionDescription anv_dri_options[] = {
@@ -122,7 +120,6 @@ static const driOptionDescription anv_dri_options[] = {
    DRI_CONF_SECTION_END
 };
 
->>>>>>> 08e33f75fde (added logging)
 static const struct debug_control debug_control[] = {
    { "bindless",                  ANV_DEBUG_BINDLESS},
    { "desc-dirty",                ANV_DEBUG_DESCRIPTOR_DIRTY},
@@ -280,7 +277,7 @@ VkResult anv_CreateInstance(
     const VkAllocationCallbacks*                pAllocator,
     VkInstance*                                 pInstance)
 {
-   mesa_log_func(MESA_LOG_INFO, "ANV.init", "-");
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
 
    struct anv_instance *instance;
    VkResult result;
@@ -333,6 +330,7 @@ void anv_DestroyInstance(
     VkInstance                                  _instance,
     const VkAllocationCallbacks*                pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    ANV_FROM_HANDLE(anv_instance, instance, _instance);
 
    if (!instance)

@@ -143,6 +143,7 @@ vk_common_GetPhysicalDeviceQueueFamilyProperties(VkPhysicalDevice physicalDevice
                                                  uint32_t *pQueueFamilyPropertyCount,
                                                  VkQueueFamilyProperties *pQueueFamilyProperties)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_physical_device, pdevice, physicalDevice);
 
    if (!pQueueFamilyProperties) {

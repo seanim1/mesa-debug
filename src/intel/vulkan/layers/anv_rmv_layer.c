@@ -30,6 +30,7 @@ VkResult anv_rmv_QueuePresentKHR(
     VkQueue                                  _queue,
     const VkPresentInfoKHR*                  pPresentInfo)
 {
+   uxzlog(MESA_LOG_INFO, "ANV.iter", "-");
    ANV_FROM_HANDLE(anv_queue, queue, _queue);
    struct anv_device *device = queue->device;
 

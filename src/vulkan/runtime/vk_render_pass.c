@@ -69,6 +69,7 @@ vk_common_CreateRenderPass(VkDevice _device,
                            const VkAllocationCallbacks *pAllocator,
                            VkRenderPass *pRenderPass)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
 
    uint32_t reference_count = 0;
@@ -250,6 +251,7 @@ vk_common_CmdBeginRenderPass(VkCommandBuffer commandBuffer,
                              const VkRenderPassBeginInfo* pRenderPassBegin,
                              VkSubpassContents contents)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_command_buffer, cmd_buffer, commandBuffer);
 
    VkSubpassBeginInfo info = {
@@ -264,6 +266,7 @@ vk_common_CmdBeginRenderPass(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL
 vk_common_CmdEndRenderPass(VkCommandBuffer commandBuffer)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_command_buffer, cmd_buffer, commandBuffer);
 
    VkSubpassEndInfo info = {
@@ -462,6 +465,7 @@ vk_common_CreateRenderPass2(VkDevice _device,
                             const VkAllocationCallbacks *pAllocator,
                             VkRenderPass *pRenderPass)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
 
    assert(pCreateInfo->sType == VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO_2);
@@ -1275,6 +1279,7 @@ vk_common_DestroyRenderPass(VkDevice _device,
                             VkRenderPass renderPass,
                             const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_render_pass, pass, renderPass);
 
@@ -2640,6 +2645,7 @@ vk_common_CmdBeginRenderPass2(VkCommandBuffer commandBuffer,
                               const VkRenderPassBeginInfo *pRenderPassBeginInfo,
                               const VkSubpassBeginInfo *pSubpassBeginInfo)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_command_buffer, cmd_buffer, commandBuffer);
    VK_FROM_HANDLE(vk_render_pass, pass, pRenderPassBeginInfo->renderPass);
    VK_FROM_HANDLE(vk_framebuffer, framebuffer,
@@ -2821,6 +2827,7 @@ VKAPI_ATTR void VKAPI_CALL
 vk_common_CmdEndRenderPass2(VkCommandBuffer commandBuffer,
                             const VkSubpassEndInfo *pSubpassEndInfo)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_command_buffer, cmd_buffer, commandBuffer);
    const struct vk_render_pass *pass = cmd_buffer->render_pass;
    struct vk_device_dispatch_table *disp =

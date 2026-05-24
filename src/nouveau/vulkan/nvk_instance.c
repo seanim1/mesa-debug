@@ -154,7 +154,7 @@ nvk_CreateInstance(const VkInstanceCreateInfo *pCreateInfo,
                    const VkAllocationCallbacks *pAllocator,
                    VkInstance *pInstance)
 {
-   mesa_log_func(MESA_LOG_INFO, "NVK", "-");
+   uxzlog(MESA_LOG_INFO, "NVK", "-");
    struct nvk_instance *instance;
    VkResult result;
 

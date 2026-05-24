@@ -1021,6 +1021,7 @@ wsi_CreateXcbSurfaceKHR(VkInstance _instance,
                         const VkAllocationCallbacks *pAllocator,
                         VkSurfaceKHR *pSurface)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_instance, instance, _instance);
    struct wsi_x11_vk_surface *surface;
 
@@ -1053,6 +1054,7 @@ wsi_CreateXlibSurfaceKHR(VkInstance _instance,
                          const VkAllocationCallbacks *pAllocator,
                          VkSurfaceKHR *pSurface)
 {
+   uxzlog(MESA_LOG_INFO, "WSI", "-");
    VK_FROM_HANDLE(vk_instance, instance, _instance);
    struct wsi_x11_vk_surface *surface;
 

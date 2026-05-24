@@ -79,6 +79,7 @@ VkResult anv_AcquireNextImage2KHR(
    const VkAcquireNextImageInfoKHR *pAcquireInfo,
    uint32_t *pImageIndex)
 {
+   uxzlog(MESA_LOG_INFO, "ANV.iter", "-");
    VK_FROM_HANDLE(anv_device, device, _device);
 
    VkResult result =
@@ -94,6 +95,7 @@ VkResult anv_QueuePresentKHR(
     VkQueue                                  _queue,
     const VkPresentInfoKHR*                  pPresentInfo)
 {
+   uxzlog(MESA_LOG_INFO, "ANV.iter", "-");
    ANV_FROM_HANDLE(anv_queue, queue, _queue);
    struct anv_device *device = queue->device;
    VkResult result;

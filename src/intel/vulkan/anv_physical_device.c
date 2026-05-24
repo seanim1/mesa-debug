@@ -2749,6 +2749,7 @@ anv_physical_device_try_create(struct vk_instance *vk_instance,
                                struct _drmDevice *drm_device,
                                struct vk_physical_device **out)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    struct anv_instance *instance =
       container_of(vk_instance, struct anv_instance, vk);
 
@@ -3132,6 +3133,7 @@ static VkQueueFamilyProperties
 anv_device_physical_get_queue_properties(const struct anv_physical_device *device,
                                          uint32_t family_index)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    const struct anv_queue_family *family = &device->queue.families[family_index];
    VkQueueFamilyProperties properties =
       get_anv_queue_family_properties_template(device);
@@ -3146,6 +3148,7 @@ void anv_GetPhysicalDeviceQueueFamilyProperties2(
     uint32_t*                                   pQueueFamilyPropertyCount,
     VkQueueFamilyProperties2*                   pQueueFamilyProperties)
 {
+   uxzlog(MESA_LOG_INFO, "ANV", "-");
    ANV_FROM_HANDLE(anv_physical_device, pdevice, physicalDevice);
    VK_OUTARRAY_MAKE_TYPED(VkQueueFamilyProperties2, out,
                           pQueueFamilyProperties, pQueueFamilyPropertyCount);

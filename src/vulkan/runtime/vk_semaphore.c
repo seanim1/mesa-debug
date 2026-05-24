@@ -138,6 +138,7 @@ vk_common_CreateSemaphore(VkDevice _device,
                           const VkAllocationCallbacks *pAllocator,
                           VkSemaphore *pSemaphore)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    struct vk_semaphore *semaphore;
 
@@ -234,6 +235,7 @@ vk_common_DestroySemaphore(VkDevice _device,
                            VkSemaphore _semaphore,
                            const VkAllocationCallbacks *pAllocator)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    VK_FROM_HANDLE(vk_device, device, _device);
    VK_FROM_HANDLE(vk_semaphore, semaphore, _semaphore);
 

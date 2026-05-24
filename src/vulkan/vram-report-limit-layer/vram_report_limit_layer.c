@@ -279,6 +279,7 @@ static void
 instance_data_unmap_physical_devices(
    struct vram_report_limit_instance_data *instance_data)
 {
+   uxzlog(MESA_LOG_INFO, "VKR", "-");
    uint32_t physicalDeviceCount = 0;
 
    instance_data->vtable.EnumeratePhysicalDevices(instance_data->instance,
