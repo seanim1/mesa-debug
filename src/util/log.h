@@ -40,7 +40,9 @@ extern "C" {
 #define uxzlog(level, tag, fmt, ...) \
     mesa_log(level, tag, "\tfunc=%s | file=%s:%d | " fmt, \
              __PRETTY_FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
-
+#define uxzptr(ptr, msg) \
+    mesa_log(MESA_LOG_INFO, "uxzptr", "file=%s:%d | " msg " | " #ptr " = %p", \
+             __FILE__, __LINE__, (void *)(ptr))
 enum mesa_log_level {
    MESA_LOG_ERROR,
    MESA_LOG_WARN,
